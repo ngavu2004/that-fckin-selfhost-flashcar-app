@@ -1,4 +1,7 @@
-# README
+# That fcking self-hosted flashcard app
+
+Anki is complex. Brainscape is not free. You know what is free? Me. (and my selfhost server)
+
 
 ## 1. DB UML diagram
 ```

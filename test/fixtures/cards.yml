@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deck: one
+  front: MyText
+  back: MyText
+  confidence: 1
+  last_reviewed: 2026-05-01 22:45:53
+
+two:
+  deck: two
+  front: MyText
+  back: MyText
+  confidence: 1
+  last_reviewed: 2026-05-01 22:45:53
