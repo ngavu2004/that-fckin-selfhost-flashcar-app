@@ -11,7 +11,7 @@ class DecksController < ApplicationController
   end
 
   def create
-    @decks = Deck.create(name: params[:deck_name])
+    @decks = Deck.create(deck_info)
 
     render json: {result: @decks, status: "┏━┓ ︵ /(^.^/)"}
   end
@@ -32,7 +32,7 @@ class DecksController < ApplicationController
     if @deck
       render json: {result: @deck.destroy, status: "(╥﹏╥)"}
     else
-      render json: {message: "This deck is no longer exists", status: "¯\\_(ツ)_/¯"}
+      deck_not_found
     end
   end
 
@@ -48,5 +48,9 @@ class DecksController < ApplicationController
 
     def deck_info
       params.expect(deck: [ :name ])
+    end
+
+    def deck_not_found
+      render json: {message: "This deck is no longer exists", status: "¯\\_(ツ)_/¯"}
     end
 end
