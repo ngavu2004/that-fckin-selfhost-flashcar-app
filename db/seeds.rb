@@ -7,8 +7,3 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-card1 = Card.find_or_create_by!(
-  front: "What is the capital of France?",
-  back: "Paris"
-)
