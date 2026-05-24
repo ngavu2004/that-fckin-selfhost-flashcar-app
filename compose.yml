@@ -1,22 +1,22 @@
 services:
-  backend:
-    build: .
-    ports:
-      - 8000:3001
-    environment:
-      - POSTGRES_HOST=localhost
-      - POSTGRES_PORT=5432
   postgres:
-    image: postgres:latest
+    image: postgres:18-alpine
     restart: always
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DATABASE=postgres
+      - POSTGRES_DB=that_fckin_selfhost_flashcar_app_development
     ports:
       - 5432:5432
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql
+  backend:
+    build: .
+    ports:
+      - 8000:3000
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
 
 volumes:
   db_data:
